@@ -17,7 +17,7 @@ class Node
 	}
 }
 
-public class BinarySearchTree {
+public class BinarySearchTree<T> {
 	Node root;
 	BinarySearchTree()
 	{
@@ -69,6 +69,31 @@ public class BinarySearchTree {
 	public int sizeRecurse(Node current)
 	{
 		return current==null?0:1+this.sizeRecurse(current.left_node)+this.sizeRecurse(current.right_node);
+	}
+	
+	int search(int key)
+	{
+		search(root,key);
+		if(search(root,key)!=null)
+			return 1;
+		return 0;
+	}
+	
+	Node search(Node root,int key)
+	{
+		if(root==null) //To check root is null
+		{
+			return root;
+		}
+		else if(root.data==key) //To check key is present
+		{
+			return root;
+		}
+		if(root.data<key)
+			return search(root.right_node,key);
+		
+		return search(root.left_node,key);
+		
 	}
 
 }

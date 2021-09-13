@@ -20,6 +20,13 @@ public class BinaryTest {
 		node.add(67);
 		System.out.println("Size of Binary Search Tree is :" + node.size());
 		node.inorder();
+		
+		if(node.search(63)==1)
+		{
+			System.out.println("Value Present!");
+		}
+		else
+			System.out.println("Value not found");
 	}
 
 }
