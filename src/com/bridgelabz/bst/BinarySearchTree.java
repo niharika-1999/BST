@@ -60,5 +60,15 @@ public class BinarySearchTree {
 			traverse(root.right_node);
 		}
 	}
+	
+	public int size() //size method to check if all added in Binary tree
+	{
+		return this.sizeRecurse(root);
+	}
+	
+	public int sizeRecurse(Node current)
+	{
+		return current==null?0:1+this.sizeRecurse(current.left_node)+this.sizeRecurse(current.right_node);
+	}
 
 }
